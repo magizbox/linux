@@ -1,0 +1,9 @@
+site_name: LinuxTutorial
+pages:
+- "Home": 'index.md'
+- "File": 'file.md'
+- "User": 'user.md'
+- "Network": 'network.md'
+- "Process": 'process.md'
+- "System": 'system.md'
+- "Text Processing": 'text_processing.md'

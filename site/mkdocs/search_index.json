@@ -1,0 +1,149 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Linux is a Unix-like and mostly POSIX-compliant \ncomputer operating system (OS)\n assembled under the model of free and open-source software development and distribution.\n\n\n\n\n\n\n[^1]: \nhttps://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard\n\n\n[^2]: \nFinding all files containing a text string on Linux\n\n\n[^3]: \n13 Linux Network Configuration and Troubleshooting Commands\n\n\n[^4]: \nThe Beginner\u2019s Guide to iptables, the Linux Firewall", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/file/", 
+            "text": "Filesystem Hierarchy Standard\n\n\n\n\nSearch\n\n\n# Finding all files containing a text string on Linux\ngrep -rnw '/path/to/somewhere/' -e \npattern\n\n\n\n\n\nExtract Files\n\n\ntar\n\n\n# tar\ntar -xzf \nfile.tar.gz\n\n\n\n\n\nzip\n\n\n# zip\nzip -r my_folder.zip my_folder\nunzip my_folder.zip\n\n\n\n\n7z\n\n\n# 7z\nyum install -y p7zip\n# [e]xtract files from archive\n7za e \nfile.7z\n\n# [a]dd files from archive\n7za a \nfile.7z", 
+            "title": "File"
+        }, 
+        {
+            "location": "/file/#filesystem-hierarchy-standard", 
+            "text": "", 
+            "title": "Filesystem Hierarchy Standard"
+        }, 
+        {
+            "location": "/file/#search", 
+            "text": "# Finding all files containing a text string on Linux\ngrep -rnw '/path/to/somewhere/' -e  pattern", 
+            "title": "Search"
+        }, 
+        {
+            "location": "/file/#extract-files", 
+            "text": "", 
+            "title": "Extract Files"
+        }, 
+        {
+            "location": "/file/#tar", 
+            "text": "# tar\ntar -xzf  file.tar.gz", 
+            "title": "tar"
+        }, 
+        {
+            "location": "/file/#zip", 
+            "text": "# zip\nzip -r my_folder.zip my_folder\nunzip my_folder.zip", 
+            "title": "zip"
+        }, 
+        {
+            "location": "/file/#7z", 
+            "text": "# 7z\nyum install -y p7zip\n# [e]xtract files from archive\n7za e  file.7z \n# [a]dd files from archive\n7za a  file.7z", 
+            "title": "7z"
+        }, 
+        {
+            "location": "/user/", 
+            "text": "User Environments\n\n\nUser Manager\n\n\n# list all users\ncat /etc/passwd\n\n# add user\nuseradd user_name\n\n# delete user\nuserdel [username]\nuserdel example\n\n# change password\npasswd user_name\n\n# grant root privileges to the user\nvisudo\nmynewuser ALL=(ALL) ALL\n\n\n\n\nGroup Manager [^1]\n\n\n# list all groups\ncat /etc/group\n\n# create a new group\ngroupadd [options] group\ngroupadd admins\n\n# delete a group\ngroupdel \ngroupname\n\ngroupdel example\n\n# add user to group\nusermod -a -G \ngroupname\n username\nusermod -a -G admins geek\n\n# change a user\u2019s primary Group\nusermod -g \ngroupname\n username\nusermod -g admins geek\n\n# list group of user\nid \nusername\n\nid geek\n\n\n\n\nKnown Issues:\n\n\n\n\ngroupdel: cannot remove the primary group of user 'administrator'\n\n\nHow to enable automatic user logins in CentOS 7 and GNOME\n\n\n\n\n[^1]: \nAdd a User to a Group (or Second Group) on Linux", 
+            "title": "User"
+        }, 
+        {
+            "location": "/user/#user-environments", 
+            "text": "", 
+            "title": "User Environments"
+        }, 
+        {
+            "location": "/user/#user-manager", 
+            "text": "# list all users\ncat /etc/passwd\n\n# add user\nuseradd user_name\n\n# delete user\nuserdel [username]\nuserdel example\n\n# change password\npasswd user_name\n\n# grant root privileges to the user\nvisudo\nmynewuser ALL=(ALL) ALL", 
+            "title": "User Manager"
+        }, 
+        {
+            "location": "/user/#group-manager-1", 
+            "text": "# list all groups\ncat /etc/group\n\n# create a new group\ngroupadd [options] group\ngroupadd admins\n\n# delete a group\ngroupdel  groupname \ngroupdel example\n\n# add user to group\nusermod -a -G  groupname  username\nusermod -a -G admins geek\n\n# change a user\u2019s primary Group\nusermod -g  groupname  username\nusermod -g admins geek\n\n# list group of user\nid  username \nid geek  Known Issues:   groupdel: cannot remove the primary group of user 'administrator'  How to enable automatic user logins in CentOS 7 and GNOME   [^1]:  Add a User to a Group (or Second Group) on Linux", 
+            "title": "Group Manager [^1]"
+        }, 
+        {
+            "location": "/network/", 
+            "text": "Network Operations\n\n\n# restart\n/etc/init.d/network restart\n# stop\n/etc/init.d/network stop\n\n\n\n\nNetwork interface\n\n\n# interface configuration\nifconfig\nifconfig eth0\n\n# enable or disable specific interface\nifup eth0\nifdown eth0\n\n\n\n\nnetstat\n\n\nPrint network connections, routings tables, interface statistics, masquerade connections, and multicast memberships\n\n\n# show listening sockets\nnetstat -l -pn -tu\n# show all sockets\nnetstat -a -pn -t\n\n  -a --all       display all sockets\n  -l --listening display listening server sockets\n\n  -n --numeric   don't resolve names\n  -p --programs  display PID/Program name for sockets\n\n  -t --tcp       tcp\n  -u --udp       udp\n\n\n\n\nlsof\n\n\nlsof -i :22\n\nCOMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME\nsshd    1471 root    3u  IPv4  16316      0t0  TCP *:ssh (LISTEN)\nsshd    1471 root    4u  IPv6  16318      0t0  TCP *:ssh (LISTEN)\n\n\n\n\nFrom A to B\n\n\n# send ICMP ECHO_REQUEST to network hosts\nping 8.8.8.8\nping -c 5 google.com\n\n# print the route package tract to network host\ntraceroute 4.2.2.2\n\n# show / manipulate the IP routing table\nroute\n\n\n\n\nDNS\n\n\n# DNS lookup utility\ndig google.com\n\n# query Internet name servers interactively\nnslookup google.com\n\n# show or set the system's hostname\nhostname\nhostnamectl status\n\n# change hostname\nhostnamectl set-hostname \nhostname\n\n\n\n\n\nwget, curl\n\n\nFirewall\n\n\n# ubuntu\nsudo ufw disable\nsudo ufw enable\n\n# centos 7\nsystemctl status firewalld\nsystemctl stop firewalld\nsystemctl start firewalld\nsystemctl restart firewalld\n\nsystemctl status iptables\nsystemctl stop iptables\nsystemctl start iptables\nsystemctl restart iptables\n\n\n\n\niptables\n [^4]\nAdministration tool for IPv4 package filtering and NAT\n\n\n# List rules\niptables -L -v\niptables -L -t nat -n\n\n# Change policy\niptables --policy INPUT ACCEPT\n\n# Blocking\n# block all connections from an IP address\niptables -A INPUT -s 10.10.10.10 -j DROP\n# block all of the IP addresses in the 10.10.10.0/24 network range\niptables -A INPUT -s 10.10.10.0/24 -j DROP\n# block SSH connections from 10.10.10.10\niptables -A INPUT -p tcp --dport ssh -s 10.10.10.10 -j DROP\n\n\n# Save changes\n# ubuntu\nsudo /sbin/iptables-save\n# redhat/centos\n/sbin/service iptables save\n\n# clear all the currently configured rules\niptables -F\n\n# options\n  -L --list [chain]   List all rules in a chain or all chains\n  -F --flush          Delete rules\n  -v --verbose        verbose mode\n  -P --policy         Change policy on chain to target\n  -n --numeric        numeric output of addresses and ports\n  -t --table          table to manipulate (default: filter)\n\n\n\n\nfirewalld\n\n\n# Dynamic Firewall Manager\nfirewalld\n\n\n\n\nSSH\n\n\nHow To Set Up SSH Keys\n\n\n# secure copy\nscp [[user@]host1:]file1 [[user@]host2:]file2", 
+            "title": "Network"
+        }, 
+        {
+            "location": "/network/#network-operations", 
+            "text": "# restart\n/etc/init.d/network restart\n# stop\n/etc/init.d/network stop  Network interface  # interface configuration\nifconfig\nifconfig eth0\n\n# enable or disable specific interface\nifup eth0\nifdown eth0  netstat  Print network connections, routings tables, interface statistics, masquerade connections, and multicast memberships  # show listening sockets\nnetstat -l -pn -tu\n# show all sockets\nnetstat -a -pn -t\n\n  -a --all       display all sockets\n  -l --listening display listening server sockets\n\n  -n --numeric   don't resolve names\n  -p --programs  display PID/Program name for sockets\n\n  -t --tcp       tcp\n  -u --udp       udp  lsof  lsof -i :22\n\nCOMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME\nsshd    1471 root    3u  IPv4  16316      0t0  TCP *:ssh (LISTEN)\nsshd    1471 root    4u  IPv6  16318      0t0  TCP *:ssh (LISTEN)  From A to B  # send ICMP ECHO_REQUEST to network hosts\nping 8.8.8.8\nping -c 5 google.com\n\n# print the route package tract to network host\ntraceroute 4.2.2.2\n\n# show / manipulate the IP routing table\nroute  DNS  # DNS lookup utility\ndig google.com\n\n# query Internet name servers interactively\nnslookup google.com\n\n# show or set the system's hostname\nhostname\nhostnamectl status\n\n# change hostname\nhostnamectl set-hostname  hostname   wget, curl  Firewall  # ubuntu\nsudo ufw disable\nsudo ufw enable\n\n# centos 7\nsystemctl status firewalld\nsystemctl stop firewalld\nsystemctl start firewalld\nsystemctl restart firewalld\n\nsystemctl status iptables\nsystemctl stop iptables\nsystemctl start iptables\nsystemctl restart iptables  iptables  [^4]\nAdministration tool for IPv4 package filtering and NAT  # List rules\niptables -L -v\niptables -L -t nat -n\n\n# Change policy\niptables --policy INPUT ACCEPT\n\n# Blocking\n# block all connections from an IP address\niptables -A INPUT -s 10.10.10.10 -j DROP\n# block all of the IP addresses in the 10.10.10.0/24 network range\niptables -A INPUT -s 10.10.10.0/24 -j DROP\n# block SSH connections from 10.10.10.10\niptables -A INPUT -p tcp --dport ssh -s 10.10.10.10 -j DROP\n\n\n# Save changes\n# ubuntu\nsudo /sbin/iptables-save\n# redhat/centos\n/sbin/service iptables save\n\n# clear all the currently configured rules\niptables -F\n\n# options\n  -L --list [chain]   List all rules in a chain or all chains\n  -F --flush          Delete rules\n  -v --verbose        verbose mode\n  -P --policy         Change policy on chain to target\n  -n --numeric        numeric output of addresses and ports\n  -t --table          table to manipulate (default: filter)  firewalld  # Dynamic Firewall Manager\nfirewalld  SSH  How To Set Up SSH Keys  # secure copy\nscp [[user@]host1:]file1 [[user@]host2:]file2", 
+            "title": "Network Operations"
+        }, 
+        {
+            "location": "/process/", 
+            "text": "Process\n\n\n\n\n1. Process Manager\n\n\nList Process [^1]\n\n\n# display Linux processes\ntop\n\n# list process\nps -aux\n\n# sort by CPU usage\ntop -o %CPU\n\n# sort by memory usage\ntop -o %MEM\nps aux --sort -rss\ntop # then press M\n\n# count process\nps -eaf | awk '{print $8}' | sort | uniq -c | sort -nr\n\n\n\n\nKill Process\n\n\n# kill process by name\npkill firefox\n\n\n\n\n2. Screen\n\n\n# create new screen\nscreen -S [screen_name]\n\n# list screen\nscreen -ls\n\n# exit from screen\nCtrl-a d\n\n# reattach a session\nscreen -r [screen_pid]\n\n# delete a screen\nscreen -X -S [screen_pid] quit\n\n\n\n\n[^1]: \nSorting down processes by memory usage", 
+            "title": "Process"
+        }, 
+        {
+            "location": "/process/#process", 
+            "text": "", 
+            "title": "Process"
+        }, 
+        {
+            "location": "/process/#1-process-manager", 
+            "text": "List Process [^1]  # display Linux processes\ntop\n\n# list process\nps -aux\n\n# sort by CPU usage\ntop -o %CPU\n\n# sort by memory usage\ntop -o %MEM\nps aux --sort -rss\ntop # then press M\n\n# count process\nps -eaf | awk '{print $8}' | sort | uniq -c | sort -nr  Kill Process  # kill process by name\npkill firefox", 
+            "title": "1. Process Manager"
+        }, 
+        {
+            "location": "/process/#2-screen", 
+            "text": "# create new screen\nscreen -S [screen_name]\n\n# list screen\nscreen -ls\n\n# exit from screen\nCtrl-a d\n\n# reattach a session\nscreen -r [screen_pid]\n\n# delete a screen\nscreen -X -S [screen_pid] quit  [^1]:  Sorting down processes by memory usage", 
+            "title": "2. Screen"
+        }, 
+        {
+            "location": "/system/", 
+            "text": "System\u00a0Information\n\n\nOS\n\n\n uname -r\n2.6.32-504.3.3.el6.x86_64\n\n\n cat /etc/os-release\nNAME=\nUbuntu\n\nVERSION=\n14.04.4 LTS, Trusty Tahr\n\nID=ubuntu\nID_LIKE=debian\nPRETTY_NAME=\nUbuntu 14.04.4 LTS\n\nVERSION_ID=\n14.04\n\nHOME_URL=\nhttp://www.ubuntu.com/\n\nSUPPORT_URL=\nhttp://help.ubuntu.com/\n\nBUG_REPORT_URL=\nhttp://bugs.launchpad.net/ubuntu/\n\n\n\n cat /etc/redhat-release\nCentOS release 7 (Final)\n\n\n\n\nRAM\n\n\n free -g\n\n             total       used       free     shared    buffers     cached\nMem:         64394       1407      62987          4         49        359\n-/+ buffers/cache:        997      63397\nSwap:       102399          0     102399\n\n\n\n\nCPU\n\n\n lscpu\n\nArchitecture:          x86_64\nCPU op-mode(s):        32-bit, 64-bit\nByte Order:            Little Endian\nCPU(s):                12\nOn-line CPU(s) list:   0-11\nThread(s) per core:    2\nCore(s) per socket:    6\nSocket(s):             1\nNUMA node(s):          1\nVendor ID:             GenuineIntel\nCPU family:            6\nModel:                 62\nStepping:              4\nCPU MHz:               1200.000\nBogoMIPS:              5199.93\nVirtualization:        VT-x\nL1d cache:             32K\nL1i cache:             32K\nL2 cache:              256K\nL3 cache:              15360K\nNUMA node0 CPU(s):     0-11\n\n\n\n\nHardisk\n\n\n df -h\n\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/sda1       197G  143G   44G  77% /\ntmpfs            32G   80K   32G   1% /dev/shm\n/dev/sda3       2.4T   17G  2.3T   1% /grid/0\n/dev/sdb1       2.7T   66G  2.5T   3% /grid/1\n/dev/sdc1       2.7T   68G  2.5T   3% /grid/2\n/dev/sdd1       2.7T   66G  2.5T   3% /grid/3\n\n\n\n\nsimilar: fdisk, sfdisk, cfdisk, parted, df, pydf, lsblk, blkid, hwinfo\n \n2", 
+            "title": "System"
+        }, 
+        {
+            "location": "/system/#system-information", 
+            "text": "", 
+            "title": "System\u00a0Information"
+        }, 
+        {
+            "location": "/system/#os", 
+            "text": "uname -r\n2.6.32-504.3.3.el6.x86_64  cat /etc/os-release\nNAME= Ubuntu \nVERSION= 14.04.4 LTS, Trusty Tahr \nID=ubuntu\nID_LIKE=debian\nPRETTY_NAME= Ubuntu 14.04.4 LTS \nVERSION_ID= 14.04 \nHOME_URL= http://www.ubuntu.com/ \nSUPPORT_URL= http://help.ubuntu.com/ \nBUG_REPORT_URL= http://bugs.launchpad.net/ubuntu/   cat /etc/redhat-release\nCentOS release 7 (Final)", 
+            "title": "OS"
+        }, 
+        {
+            "location": "/system/#ram", 
+            "text": "free -g\n\n             total       used       free     shared    buffers     cached\nMem:         64394       1407      62987          4         49        359\n-/+ buffers/cache:        997      63397\nSwap:       102399          0     102399", 
+            "title": "RAM"
+        }, 
+        {
+            "location": "/system/#cpu", 
+            "text": "lscpu\n\nArchitecture:          x86_64\nCPU op-mode(s):        32-bit, 64-bit\nByte Order:            Little Endian\nCPU(s):                12\nOn-line CPU(s) list:   0-11\nThread(s) per core:    2\nCore(s) per socket:    6\nSocket(s):             1\nNUMA node(s):          1\nVendor ID:             GenuineIntel\nCPU family:            6\nModel:                 62\nStepping:              4\nCPU MHz:               1200.000\nBogoMIPS:              5199.93\nVirtualization:        VT-x\nL1d cache:             32K\nL1i cache:             32K\nL2 cache:              256K\nL3 cache:              15360K\nNUMA node0 CPU(s):     0-11", 
+            "title": "CPU"
+        }, 
+        {
+            "location": "/system/#hardisk", 
+            "text": "df -h\n\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/sda1       197G  143G   44G  77% /\ntmpfs            32G   80K   32G   1% /dev/shm\n/dev/sda3       2.4T   17G  2.3T   1% /grid/0\n/dev/sdb1       2.7T   66G  2.5T   3% /grid/1\n/dev/sdc1       2.7T   68G  2.5T   3% /grid/2\n/dev/sdd1       2.7T   66G  2.5T   3% /grid/3  similar: fdisk, sfdisk, cfdisk, parted, df, pydf, lsblk, blkid, hwinfo   2", 
+            "title": "Hardisk"
+        }, 
+        {
+            "location": "/text_processing/", 
+            "text": "Text Processing \n Pipeline\n\n\ntail, head, cat\n\n\n# output last part\ntail test.txt\ntail -f test.txt\n\n# output first part\nhead test.txt\nhead -n 100 test.txt\n\n# concatenate files and print\ncat test1.txt\ncat test1.txt test2.text\n\n\n\n\nsort\n\n\n# unique\nsort -u test.txt\n\n\n\n\nwc\n\n\n# newline, word and byte counts\nwc -l test.txt\nps aux | grep apach2 | wc -l", 
+            "title": "Text Processing"
+        }, 
+        {
+            "location": "/text_processing/#text-processing-pipeline", 
+            "text": "", 
+            "title": "Text Processing &amp; Pipeline"
+        }, 
+        {
+            "location": "/text_processing/#tail-head-cat", 
+            "text": "# output last part\ntail test.txt\ntail -f test.txt\n\n# output first part\nhead test.txt\nhead -n 100 test.txt\n\n# concatenate files and print\ncat test1.txt\ncat test1.txt test2.text", 
+            "title": "tail, head, cat"
+        }, 
+        {
+            "location": "/text_processing/#sort", 
+            "text": "# unique\nsort -u test.txt", 
+            "title": "sort"
+        }, 
+        {
+            "location": "/text_processing/#wc", 
+            "text": "# newline, word and byte counts\nwc -l test.txt\nps aux | grep apach2 | wc -l", 
+            "title": "wc"
+        }
+    ]
+}
