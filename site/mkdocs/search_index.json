@@ -144,6 +144,51 @@
             "location": "/text_processing/#wc", 
             "text": "# newline, word and byte counts\nwc -l test.txt\nps aux | grep apach2 | wc -l", 
             "title": "wc"
+        }, 
+        {
+            "location": "/shell/", 
+            "text": "Shell\n\n\nExpression\n\n\na = 1;\nb = \nstring\n;\nc = [1, 2, \nstr\n, true, false];\na = 1 + 2;\nb = a * 7;\nc = \nCon\n ++ \ncat\n;\nd = c ++ b;\n\n\n\n\nCommand\n\n\nprintln(\nHello world\n);\nprint(\nHello\n);\nprintln(\n world\n);\n\njava = \n/usr/bin/java\n;\ncall(java, \n-jar\n, \nclosure.jar\n);\n\n\n\n\nConditional\n\n\na = 3;\nif (a \n 2) {\n  println(\nYes\n);\n} else {\n  println(\nNo\n);\n}\n\n\n\n\nLoop\n\n\n// Fibonacci\nn = 0;\ni = 0;\nj = 1;\nwhile (n \n 60) {\n  k = i + j;\n  i = j;\n  j = k;\n  n = n + 1;\n  echo(k);\n}\n\n\n\n\nFunction\n\n\n// Function call\nfunction func1(p1, p2) {\n  println(p1, p2);\n}\nfunc1(\nHello\n, \nWorld\n);\n\n// Global and local variables\nv1 = \nGlobal V1\n;\nv2 = \nGlobal V2\n;\nv3 = \nGlobal V3\n;\nfunction func2(p) {\n  v1 = \nLocal \n ++ p;\n  println(v1);\n  println(v2);\n  global v3;\n  v3 = \nV3 Modified.\n;\n}\nfunc2(\nVar\n);\nprintln(v1);\nprintln(v3);\n\n// Return value\nfunction func3(num) {\n  return num + 41;\n}\nfunc3(4);\nprintln();\nret = func3(1);\nprintln(\nReturned:\n, ret);\n\n\n\n\nRecursive\n\n\nfunction fibonacci(num) {\n  if (num == 0) {\n    return 0;\n  } else if (num == 1) {\n    return 1;\n  } else {\n    return fibonacci(num - 2) + fibonacci(num - 1);\n  }\n}\nfibonacci(5);\n\n\n\n\nFile System\n\n\n// List files\nfiles = readdir();\n\n// Test existence\nif (exists(\nfile1.txt\n)) {\n  println(\nfile1.txt exists.\n);\n}\n\nexistence = exists(\nfile2.txt\n);\nif (existence) {\n  println(\nfile2.txt exists.\n);\n}\n\nif (!exists(\nfile3.txt\n)) {\n  println(\nfile3.txt does not exist.\n);\n}\n\n\n\n\nBatsh \u2013 A language that compiles to Bash and Windows Batch", 
+            "title": "Shell"
+        }, 
+        {
+            "location": "/shell/#shell", 
+            "text": "", 
+            "title": "Shell"
+        }, 
+        {
+            "location": "/shell/#expression", 
+            "text": "a = 1;\nb =  string ;\nc = [1, 2,  str , true, false];\na = 1 + 2;\nb = a * 7;\nc =  Con  ++  cat ;\nd = c ++ b;", 
+            "title": "Expression"
+        }, 
+        {
+            "location": "/shell/#command", 
+            "text": "println( Hello world );\nprint( Hello );\nprintln(  world );\n\njava =  /usr/bin/java ;\ncall(java,  -jar ,  closure.jar );", 
+            "title": "Command"
+        }, 
+        {
+            "location": "/shell/#conditional", 
+            "text": "a = 3;\nif (a   2) {\n  println( Yes );\n} else {\n  println( No );\n}", 
+            "title": "Conditional"
+        }, 
+        {
+            "location": "/shell/#loop", 
+            "text": "// Fibonacci\nn = 0;\ni = 0;\nj = 1;\nwhile (n   60) {\n  k = i + j;\n  i = j;\n  j = k;\n  n = n + 1;\n  echo(k);\n}", 
+            "title": "Loop"
+        }, 
+        {
+            "location": "/shell/#function", 
+            "text": "// Function call\nfunction func1(p1, p2) {\n  println(p1, p2);\n}\nfunc1( Hello ,  World );\n\n// Global and local variables\nv1 =  Global V1 ;\nv2 =  Global V2 ;\nv3 =  Global V3 ;\nfunction func2(p) {\n  v1 =  Local   ++ p;\n  println(v1);\n  println(v2);\n  global v3;\n  v3 =  V3 Modified. ;\n}\nfunc2( Var );\nprintln(v1);\nprintln(v3);\n\n// Return value\nfunction func3(num) {\n  return num + 41;\n}\nfunc3(4);\nprintln();\nret = func3(1);\nprintln( Returned: , ret);", 
+            "title": "Function"
+        }, 
+        {
+            "location": "/shell/#recursive", 
+            "text": "function fibonacci(num) {\n  if (num == 0) {\n    return 0;\n  } else if (num == 1) {\n    return 1;\n  } else {\n    return fibonacci(num - 2) + fibonacci(num - 1);\n  }\n}\nfibonacci(5);", 
+            "title": "Recursive"
+        }, 
+        {
+            "location": "/shell/#file-system", 
+            "text": "// List files\nfiles = readdir();\n\n// Test existence\nif (exists( file1.txt )) {\n  println( file1.txt exists. );\n}\n\nexistence = exists( file2.txt );\nif (existence) {\n  println( file2.txt exists. );\n}\n\nif (!exists( file3.txt )) {\n  println( file3.txt does not exist. );\n}  Batsh \u2013 A language that compiles to Bash and Windows Batch", 
+            "title": "File System"
         }
     ]
 }
