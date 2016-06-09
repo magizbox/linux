@@ -7,3 +7,4 @@ pages:
 - "Process": 'process.md'
 - "System": 'system.md'
 - "Text Processing": 'text_processing.md'
+- "Shell": 'shell.md'
